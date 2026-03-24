@@ -1,13 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Meu site</title>
+<title>AchouAI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family: Arial;
+background:#f2f2f2;
+text-align:center;
+padding:30px;
+}
+
+h1{
+color:#333;
+}
+
+input{
+padding:12px;
+width:250px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+button{
+padding:12px 20px;
+background:#007BFF;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:20px auto;
+width:300px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>Meu site está online 🚀</h1>
-<p>Primeiro site funcionando.</p>
+<h1>AchouAI 🤖</h1>
+
+<p>A IA que encontra tudo para você</p>
+
+<input id="busca" placeholder="Ex: emprego em São Paulo">
+
+<br><br>
+
+<button onclick="buscar()">Buscar</button>
+
+<div id="resultado"></div>
+
+<script>
+
+function buscar(){
+
+let texto = document.getElementById("busca").value;
+
+let resultado = document.getElementById("resultado");
+
+resultado.innerHTML = `
+<div class="card">
+<h3>🔎 Procurando...</h3>
+<p>Buscando por: ${texto}</p>
+</div>
+
+<div class="card">
+<h3>💼 Emprego encontrado</h3>
+<p>Auxiliar de loja</p>
+<p>📍 Perto de você</p>
+</div>
+
+<div class="card">
+<h3>🍔 Serviço próximo</h3>
+<p>Lanchonete aberta agora</p>
+<p>📍 1.2 km de distância</p>
+</div>
+
+`;
+
+}
+
+</script>
 
 </body>
 </html>
